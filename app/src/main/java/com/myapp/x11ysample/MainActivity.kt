@@ -39,39 +39,4 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-    @Composable
-    private fun SmallBox() {
-        var clicked by remember { mutableStateOf(false) }
-        Box(
-            Modifier
-                .size(100.dp)
-                .background(if (clicked) Color.DarkGray else Color.LightGray)
-        ) {
-            Box(
-                Modifier
-                    .align(Alignment.Center)
-                    .clickable { clicked = !clicked }
-                    .background(Color.Black)
-                    .size(1.dp)
-            )
-        }
-    }
-
-    @Composable
-    private fun LargeBox() {
-        var clicked by remember { mutableStateOf(false) }
-        Box(
-            Modifier
-                .size(100.dp)
-                .background(if (clicked) Color.DarkGray else Color.LightGray)
-        ) {
-            Box(
-                Modifier
-                    .align(Alignment.Center)
-                    .clickable { clicked = !clicked }
-                    .background(Color.Black)
-                    .sizeIn(minWidth = 48.dp, minHeight = 48.dp)
-            )
-        }
-    }
 }
