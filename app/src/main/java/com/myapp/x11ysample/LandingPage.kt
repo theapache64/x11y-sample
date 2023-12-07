@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
@@ -75,6 +76,9 @@ fun MastheadWidget() {
     }
 }
 
+
+const val TAG_CATEGORY_HEADING = "category_heading"
+
 @Composable
 fun HorizontalMovies(
     trayIndex: Int,
@@ -87,6 +91,7 @@ fun HorizontalMovies(
             text = "Category $trayIndex",
             modifier = Modifier
                 .padding(bottom = 5.dp)
+                .testTag(TAG_CATEGORY_HEADING)
                 .semantics { heading() }
         )
         LazyRow {
